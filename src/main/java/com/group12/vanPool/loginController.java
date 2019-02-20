@@ -10,13 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/login")
 public class loginController {
 
-    @Autowired
-    public loginController(){
-        super();
-    }
 
     @GetMapping
     public String login(Model model){
-        return "login/login.html";
+        return "login";
     }
 }

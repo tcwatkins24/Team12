@@ -10,13 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 public class homePageController {
 
-    @Autowired
-    public homePageController(){
-        super();
-    }
 
     @GetMapping
     public String homePage(Model model){
-        return "homePage/index.html";
+        return "index";
     }
 }
