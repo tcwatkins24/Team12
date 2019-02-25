@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
+
 </head>
 <body>
 <h1>Sign Up for VanPool.</h1>
@@ -14,7 +15,11 @@
     <br>
     Password:
     <br>
-    <input type="text" name="password">
+    <input type="password" name="password">
+    <br>
+    Confirm Password:
+    <br>
+    <input type="password" name="confirmPassword">
     <br>
     First Name:
     <br>
@@ -24,8 +29,22 @@
     <br>
     <input type="text" name="lastName">
     <br>
+    Phone Number:
+    <br>
+    <input type="tel" name="phone">
+    <br>
+    Sign up as a
+    <input type="radio" name="userLevel" value="passenger" checked> Passenger
+    <input type="radio" name="userLevel" value="driver"> Driver
+    <br>
+    <br>
+    <input type="checkbox" name="policy">
+    Agree Policy
     <br>
     <button type="submit">Submit</button>
+
+    <br>
+    <br>
 </form>
 
 
