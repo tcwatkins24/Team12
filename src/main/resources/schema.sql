@@ -18,6 +18,12 @@ create table Passenger (
     email varchar(25)
 );
 
+create table Route(
+    rNumber integer primary key,
+    startLoc varchar(25),
+    endLoc varchar(25)
+);
+
 create table Vehicle (
     vNumber integer primary key AUTO_INCREMENT,
     brand varchar(25),
