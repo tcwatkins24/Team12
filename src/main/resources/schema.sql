@@ -9,7 +9,23 @@ CREATE TABLE IF NOT EXISTS Driver (
 
 INSERT INTO Driver (dName) VALUES('Kyle');
 
+create table Passenger (
+    id integer primary key AUTO_INCREMENT,
+    pName varchar(25),
+    balance integer,
+    username varchar(25),
+    password varchar(25),
+    email varchar(25)
+);
 
+create table Vehicle (
+    vNumber integer primary key AUTO_INCREMENT,
+    brand varchar(25),
+    model varchar(25),
+    vYear integer,
+    capacity integer,
+    currentRoute integer
+);
 --create table if not exist Driver (
 --    Id int,
 --    Dnamne varchar(25),
