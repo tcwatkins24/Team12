@@ -2,9 +2,13 @@
 CREATE TABLE IF NOT EXISTS Driver (
      id        INTEGER  PRIMARY KEY AUTO_INCREMENT,
      dName VARCHAR(25),
+     route integer,
+     username varchar(25),
+     password varchar(25)
 );
 
 INSERT INTO Driver (dName) VALUES('Kyle');
+
 
 --create table if not exist Driver (
 --    Id int,
