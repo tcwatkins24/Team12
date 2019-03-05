@@ -32,6 +32,8 @@ create table Vehicle (
     capacity integer,
     currentRoute integer
 );
+
+
 --create table if not exist Driver (
 --    Id int,
 --    Dnamne varchar(25),

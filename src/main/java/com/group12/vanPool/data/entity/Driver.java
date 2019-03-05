@@ -11,6 +11,11 @@ public class Driver {
     private int id;
     @Column(name = "dName")
     private String dName;
+    @Column(name = "route")
+    private int route;
+    @Column(name = "username")
+    private String username;
+
 
     public int getId() {
         return this.id;
@@ -25,5 +30,10 @@ public class Driver {
     public void setdName(String name) {
         this.dName = name;
     }
+
+    public int getRoute() {return this.route;}
+    public void setRoute(int r) {this.route = r;}
+
+    public String getUsername() {return this.username;}
 
 }
