@@ -35,5 +35,6 @@ public class Driver {
     public void setRoute(int r) {this.route = r;}
 
     public String getUsername() {return this.username;}
+    public void setUsername(String username) {this.username = username;}
 
 }
