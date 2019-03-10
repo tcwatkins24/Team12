@@ -7,7 +7,20 @@ CREATE TABLE IF NOT EXISTS Driver (
      password varchar(25)
 );
 
-INSERT INTO Driver (dName) VALUES('Kyle');
+--INSERT INTO Driver (dName) VALUES('Kyle');
+
+create table Users(
+    id integer primary key AUTO_INCREMENT,
+    uName varchar(25),
+    password varchar(25),
+    currentUserType integer, -- 0 == passenger, 1 == driver, 3 == administrator
+    remainingSignInAttempts integer
+);
+
+INSERT INTO Users (uName,password,currentUserType,remainingSignInAttempts) VALUES ('user1','tempPass',0, 3);
+
+
+
 
 create table Passenger (
     id integer primary key AUTO_INCREMENT,
