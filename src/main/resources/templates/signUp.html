@@ -10,6 +10,8 @@
     Have a account.
     <a href = "/login">Login</a>
 </h5>
+<br>
+
 <form th:action="@{/submit-signUp}" th:object="${userDto}"  th:method="post" method="post" action="signUp">
     <ul class="global-errors" th:if="${#fields.hasErrors('global')}">
         <li class="text-danger" th:each="err : ${#fields.errors('global')}" th:text="${err}">Input is incorrect</li>
