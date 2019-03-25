@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 public class Route {
-
+    @Id
     @Column(name = "rNumber")
     private int rNumber;
     @Column(name = "startLoc")
