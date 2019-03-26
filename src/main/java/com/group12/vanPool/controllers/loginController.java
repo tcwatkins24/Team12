@@ -17,10 +17,9 @@ public class loginController {
         return "login";
     }
 
-    @PostMapping(value = "/login")
-    public ModelAndView finishedLogin(ModelAndView modelAndView){
-        modelAndView.setViewName("/riderHomePage");
-        return modelAndView;
-    }
+//    @PostMapping("/complete")
+//    public String finishedLogin(Model model){
+//        return "riderHomePage";
+//    }
 
 }
