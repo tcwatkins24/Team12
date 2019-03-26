@@ -17,9 +17,9 @@ public class loginController {
         return "login";
     }
 
-//    @PostMapping("/complete")
-//    public String finishedLogin(Model model){
-//        return "riderHomePage";
-//    }
+    @PostMapping("/login-test")
+    public String finishedLogin(Model model){
+        return "riderHomePage";
+    }
 
 }
