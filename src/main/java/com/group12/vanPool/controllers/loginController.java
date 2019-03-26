@@ -9,17 +9,20 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
-@RequestMapping("/login")
+@RequestMapping("")
 public class loginController {
 
-    @GetMapping
+    @GetMapping("/login")
     public String login(Model model){
         return "login";
     }
 
     @PostMapping("/login-test")
-    public String finishedLogin(Model model){
-        return "riderHomePage";
+    public ModelAndView finishedLogin(ModelAndView model)
+    {
+
+        model.setViewName("/riderHomePage");
+        return model;
     }
 
 }
