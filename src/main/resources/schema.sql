@@ -1,5 +1,5 @@
 
-CREATE TABLE IF NOT EXISTS Driver (
+CREATE TABLE Driver (
      id        INTEGER  PRIMARY KEY AUTO_INCREMENT,
      dName VARCHAR(25),
      route integer,
@@ -7,20 +7,12 @@ CREATE TABLE IF NOT EXISTS Driver (
      password varchar(25)
 );
 
---INSERT INTO Driver (dName) VALUES('Kyle');
-
 create table Users(
     id integer primary key AUTO_INCREMENT,
     uName varchar(25),
     password varchar(25),
-    currentUserType integer, -- 0 == passenger, 1 == driver, 3 == administrator
-    remainingSignInAttempts integer
+    currentUserType integer,
 );
-
-INSERT INTO Users (uName,password,currentUserType,remainingSignInAttempts) VALUES ('user1','tempPass',0, 3);
-
-
-
 
 create table Passenger (
     id integer primary key AUTO_INCREMENT,
@@ -31,11 +23,15 @@ create table Passenger (
     email varchar(25)
 );
 
-create table Route(
-    rNumber integer primary key,
-    startLoc varchar(25),
-    endLoc varchar(25)
+create table ROUTE(
+    ID integer primary key AUTO_INCREMENT,
+    STARTLOCATION varchar(25),
+    ENDLOCATION varchar(25),
+    STARTPICKUPTIME varchar(25),
+    ENDPICKUPTIME varchar(25)
+
 );
+
 
 create table Vehicle (
     vNumber integer primary key AUTO_INCREMENT,
@@ -45,6 +41,12 @@ create table Vehicle (
     capacity integer,
     currentRoute integer
 );
+
+--INSERT INTO Route (STARTLOCATION,ENDLOCATION) VALUES ('Iowa City','Cedar Rapids');
+--INSERT INTO Route (STARTLOCATION,ENDLOCATION) VALUES ('Iowa City','Des Moines');
+--INSERT INTO Route (STARTLOCATION,ENDLOCATION) VALUES ('Iowa City','Davenport');
+--INSERT INTO Route (STARTLOCATION,ENDLOCATION) VALUES ('Iowa City','Ames');
+--INSERT INTO Route (STARTLOCATION,ENDLOCATION) VALUES ('Iowa City','Waterloo');
 
 
 --create table if not exist Driver (

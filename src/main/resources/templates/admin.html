@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+</head>
+<body>
+<h1>Admin</h1>
+<h5>
+    Back to main page
+    <a href = "/">Login</a>
+</h5>
+<br>
+
+<form th:action="@{/admin}" method="post">
+    <div><label> Start Location: <input type="text" name="startLocation"/> </label></div>
+    <div><label> End Location:<input type="text" name="endLocation"/> </label></div>
+    <div><label> Start Pickup Time:<input type="text" name="startPickUpTime"/> </label></div>
+    <div><label> End Pickup Time:<input type="text" name="endPickUpTime"/> </label></div>
+
+    <div><input type="submit" value="Create new ride"></div>
+</form>
+
+</body>
+</html>

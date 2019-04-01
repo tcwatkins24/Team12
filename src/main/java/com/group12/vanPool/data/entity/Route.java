@@ -3,32 +3,52 @@ package com.group12.vanPool.data.entity;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "ROUTE")
 public class Route {
     @Id
-    @Column(name = "rNumber")
-    private int rNumber;
-    @Column(name = "startLoc")
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private int id;
     private String startLoc;
-    @Column(name = "endLoc")
     private String endLoc;
+    private String startPickUpTime;
+    private String endPickUpTime;
 
-    public int getrNumber() {
-        return rNumber;
+    public String getStartPickUpTime() {
+        return startPickUpTime;
     }
-    public void setrNumber(int rNum){
-        this.rNumber = rNum;
+
+    public void setStartPickUpTime(String startPickUpTime) {
+        this.startPickUpTime = startPickUpTime;
+    }
+
+    public String getEndPickUpTime() {
+        return endPickUpTime;
+    }
+
+    public void setEndPickUpTime(String endPickUpTime) {
+        this.endPickUpTime = endPickUpTime;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getStartLoc() {
-        return this.startLoc;
+        return startLoc;
     }
-    public void setStartLoc(String sLoc) {
-        this.startLoc = sLoc;
+
+    public void setStartLoc(String startLoc) {
+        this.startLoc = startLoc;
     }
 
     public String getEndLoc() {
         return endLoc;
     }
+
     public void setEndLoc(String endLoc) {
         this.endLoc = endLoc;
     }
