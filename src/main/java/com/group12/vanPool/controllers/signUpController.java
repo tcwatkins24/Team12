@@ -1,6 +1,9 @@
 package com.group12.vanPool.controllers;
 
 import com.group12.vanPool.UserDto;
+import com.group12.vanPool.data.entity.Users;
+import com.group12.vanPool.data.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,6 +21,8 @@ import javax.validation.Valid;
 @RequestMapping("")
 public class signUpController {
 
+    @Autowired
+    private UserRepository userRepository;
 
     public signUpController( ) {
     }
@@ -34,6 +39,11 @@ public class signUpController {
         if (bindingResult.hasErrors()) {
             modelAndView.setViewName("/signUp");
         }else {
+            Users newUser = new Users();
+            newUser.setuName(userDto.getUsername());
+            newUser.setPassword(userDto.getPassword());
+            newUser.setRemainingSignInAttempts(3);
+            userRepository.save(newUser);
             modelAndView.setViewName("/completeSignUp");
         }
         return modelAndView;
