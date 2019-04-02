@@ -46,6 +46,16 @@
         <input type="password" class="form-control" th:field="*{matchingPassword}" id="matchingPassword">
         <p class="text-danger" th:if="${#fields.hasErrors('matchingPassword')}" th:errors="*{matchingPassword}"></p>
     </div>
+
+    <div id="wrapper">
+        <label th:for="isDriver">Are you signing up as a Driver?</label>
+        <p>
+            <input type="radio" name="yes_no" value ="yes" checked>Yes</input>
+        </p>
+        <p>
+            <input type="radio" name="yes_no" value ="no">No</input>
+        </p>
+    </div>
     <br>
     <button type="submit">Submit</button>
 </form>

@@ -4,7 +4,8 @@ CREATE TABLE Driver (
      dName VARCHAR(25),
      route integer,
      username varchar(25),
-     password varchar(25)
+     password varchar(25),
+     isAuth bit
 );
 
 create table Users(
