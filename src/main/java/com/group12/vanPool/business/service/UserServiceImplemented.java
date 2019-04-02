@@ -28,4 +28,14 @@ public class UserServiceImplemented implements UserService{
         return list;
     }
 
+    @Override
+    public Users getByUsername(String uname) {
+        Iterable<Users> users = this.userRepo.findAll();
+        for(Users user : users) {
+            if (user.getuName().equals(uname)) return user;
+        }
+
+        return null;
+    }
+
 }
