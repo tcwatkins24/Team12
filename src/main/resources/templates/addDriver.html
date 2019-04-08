@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Driver</title>
+</head>
+<body>
+<h1> Add new Driver</h1>
+<h5>
+    Back to main page
+    <a href="/">Login</a>
+</h5>
+
+<br>
+
+<table class = "table table-striped">
+    <tr>
+        <th>Driver Name</th>
+        <th>Username</th>
+        <th>Authorize this Driver</th>
+    </tr>
+
+
+    <br>
+
+        <tr th:each="driver : ${drivers}">
+            <td th:text="${driver.dName}"></td>
+            <td th:text="${driver.username}" name="dUser"></td>
+        </tr>
+
+
+</table>
+
+</form>
+</body>
+</html>
