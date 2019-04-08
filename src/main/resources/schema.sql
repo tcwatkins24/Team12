@@ -29,7 +29,8 @@ create table ROUTE(
     STARTLOCATION varchar(25),
     ENDLOCATION varchar(25),
     STARTPICKUPTIME varchar(25),
-    ENDPICKUPTIME varchar(25)
+    ENDPICKUPTIME varchar(25),
+    CAPACITY integer
 
 );
 

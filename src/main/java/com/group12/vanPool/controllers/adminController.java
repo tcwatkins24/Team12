@@ -18,6 +18,4 @@ public class adminController {
         return "admin";
     }
 
-
-
 }
