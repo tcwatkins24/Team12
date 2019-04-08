@@ -13,27 +13,9 @@ import java.util.Map;
 @RequestMapping("/admin")
 public class adminController {
 
-    @Autowired
-    private RouteRepository routeRepository;
-
     @RequestMapping(method = RequestMethod.GET)
     public String displayAdmin(){
         return "admin";
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public ModelAndView formSubmit(@RequestParam Map<String,String> reqPar){
-
-        Route route = new Route();
-        route.setStartLoc(reqPar.get("startLocation"));
-        route.setEndLoc(reqPar.get("endLocation"));
-        route.setStartPickUpTime(reqPar.get("startPickUpTime"));
-        route.setEndPickUpTime(reqPar.get("endPickUpTime"));
-        route.setCapacity(Integer.parseInt(reqPar.get("capacity")));
-
-        routeRepository.save(route);
-
-        ModelAndView model1 = new ModelAndView("home");
-        return model1;
-    }
 }

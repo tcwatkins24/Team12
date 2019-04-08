@@ -9,7 +9,7 @@ public class Users {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    private int id;
 
     @Column(name = "uName")
     private String uName;
@@ -23,11 +23,11 @@ public class Users {
     @Column(name = "remainingSignInAttempts")
     private int remainingSignInAttempts;
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

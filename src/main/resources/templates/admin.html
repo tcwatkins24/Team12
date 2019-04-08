@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
@@ -12,15 +12,7 @@
 </h5>
 <br>
 
-<form th:action="@{/admin}" method="post">
-    <div><label> Start Location: <input type="text" name="startLocation"/> </label></div>
-    <div><label> End Location:<input type="text" name="endLocation"/> </label></div>
-    <div><label> Start Pickup Time:<input type="text" name="startPickUpTime"/> </label></div>
-    <div><label> End Pickup Time:<input type="text" name="endPickUpTime"/> </label></div>
-    <div><label> Van Capacity:<input type="text" name="capacity"/> </label></div>
-
-    <div><input type="submit" value="Create new ride"></div>
-</form>
-
+<button><a href="/addRoute">addRoute</a></button>
+<button><a href="/addDriver">addDriver</a> </button>
 </body>
 </html>

@@ -22,9 +22,10 @@ public class UserDto {
     private String password;
     @NotBlank (message = "Matching password is required")
     private String matchingPassword;
+    private boolean isDriver;
 
 
-    public UserDto(Long id, String username, String firstName, String lastName, String email, String password, String matchingPassword) {
+    public UserDto(Long id, String username, String firstName, String lastName, String email, String password, String matchingPassword, boolean isDriver) {
         this.id = id;
         this.username = username;
         this.lastName = lastName;
@@ -32,6 +33,7 @@ public class UserDto {
         this.email = email;
         this.password = password;
         this.matchingPassword = matchingPassword;
+        this.isDriver = isDriver;
 
     }
 
@@ -93,4 +95,6 @@ public class UserDto {
         this.matchingPassword = matchingPassword;
     }
 
+    public boolean isDriver() {return this.isDriver;}
+    public void setDriver(boolean flag) {this.isDriver = flag;}
 }

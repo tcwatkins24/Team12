@@ -15,6 +15,8 @@ public class Driver {
     private int route;
     @Column(name = "username")
     private String username;
+    @Column(name = "isAuth")
+    private boolean isAuth = false;
 
 
     public int getId() {
@@ -36,5 +38,8 @@ public class Driver {
 
     public String getUsername() {return this.username;}
     public void setUsername(String username) {this.username = username;}
+
+    public boolean getAuth() {return this.isAuth;}
+    public void setAuth(boolean flag) {this.isAuth = flag;}
 
 }

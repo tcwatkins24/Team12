@@ -16,7 +16,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/", "/home","/signUp","/h2-console/**", "/submit-signUp","/admin").permitAll()
+                .antMatchers("/", "/home","/signUp","/h2-console/**", "/submit-signUp","/admin","/addRoute").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -31,16 +31,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.headers().frameOptions().disable();
     }
 
-    @Bean
-    @Override
-    public UserDetailsService userDetailsService() {
-        UserDetails user =
-                User.withDefaultPasswordEncoder()
-                        .username("user")
-                        .password("password")
-                        .roles("USER")
-                        .build();
 
-        return new InMemoryUserDetailsManager(user);
-    }
+
 }
