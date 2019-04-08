@@ -29,6 +29,7 @@ public class adminController {
         route.setEndLoc(reqPar.get("endLocation"));
         route.setStartPickUpTime(reqPar.get("startPickUpTime"));
         route.setEndPickUpTime(reqPar.get("endPickUpTime"));
+        route.setCapacity(Integer.parseInt(reqPar.get("capacity")));
 
         routeRepository.save(route);
 

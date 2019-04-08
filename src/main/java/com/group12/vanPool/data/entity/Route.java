@@ -12,6 +12,15 @@ public class Route {
     private String endLoc;
     private String startPickUpTime;
     private String endPickUpTime;
+    private int capacity;
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
 
     public String getStartPickUpTime() {
         return startPickUpTime;

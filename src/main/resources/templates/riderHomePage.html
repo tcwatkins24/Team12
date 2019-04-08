@@ -17,6 +17,8 @@
         <th>To</th>
         <th>Start Pickup</th>
         <th>End Pickup</th>
+        <th>Remaining Seats</th>
+
     </tr>
 
     <tr th:each="route : ${routes}">
@@ -25,7 +27,9 @@
         <td th:text="${route.endLoc}"></td>
         <td th:text="${route.startPickUpTime}"></td>
         <td th:text="${route.endPickUpTime}"></td>
-        <td><button>Join</button></td>
+        <td th:text="${route.capacity}"></td>
+
+        <td><button type = "submit" th:id = "${route.id}">Join</button></td>
 
     </tr>
 </table>
