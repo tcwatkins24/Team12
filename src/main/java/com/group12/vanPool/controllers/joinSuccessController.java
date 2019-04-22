@@ -1,26 +1,22 @@
 package com.group12.vanPool.controllers;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/rideSearch")
-public class rideSearchController {
+@RequestMapping("joinSuccess")
+public class joinSuccessController {
 
     @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView displayRides(ModelAndView model) {
-        return model;
+    public String displaySuccess() {
+        return "joinSuccess";
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public ModelAndView joinRide() {
-        ModelAndView model = new ModelAndView("riderHomepage");
-
-
-        return model;
+    public String rideJoined() {
+        return "joinSuccess";
     }
+
 }

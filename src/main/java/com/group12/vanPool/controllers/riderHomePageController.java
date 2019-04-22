@@ -47,5 +47,7 @@ public class riderHomePageController {
         model.addObject("matchedRoutes", matchedRoutes);
         return model;
     }
+
+
 }
 

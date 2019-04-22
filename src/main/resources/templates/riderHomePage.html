@@ -22,6 +22,7 @@
 
     </tr>
 
+    <form th:action="@{/joinSuccess}" method="post">
     <tr th:each="route : ${routes}">
         <td th:text="${route.id}"></td>
         <td th:text="${route.startLoc}"></td>
@@ -30,9 +31,9 @@
         <td th:text="${route.endPickUpTime}"></td>
         <td th:text="${route.capacity}"></td>
 
-        <td><button type = "submit" th:id = "${route.id}">Join</button></td>
-
+        <td><button type = "submit" th:id = "${route.id}" name="routeID">Join</button></td>
     </tr>
+    </form>
 </table>
 <br>
 <h2> Search for a ride </h2>
