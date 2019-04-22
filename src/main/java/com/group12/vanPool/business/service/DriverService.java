@@ -7,4 +7,7 @@ import java.util.List;
 public interface DriverService {
     List<Driver> getDrivers();
 
+    List<Driver> getUnvalidatedDrivers();
+
+
 }

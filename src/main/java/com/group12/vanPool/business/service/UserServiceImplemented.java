@@ -3,6 +3,7 @@ package com.group12.vanPool.business.service;
 import com.group12.vanPool.data.entity.Users;
 import com.group12.vanPool.data.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -32,10 +33,24 @@ public class UserServiceImplemented implements UserService{
     public Users getByUsername(String uname) {
         Iterable<Users> users = this.userRepo.findAll();
         for(Users user : users) {
-            if (user.getuName().equals(uname)) return user;
+            if (user.getuName().equals(uname)){
+                return user;
+            }
         }
 
-        return null;
+        throw new UsernameNotFoundException("Could not find username: "+ uname);
+    }
+
+    @Override
+    public int getUserType(String uname) {
+        Iterable<Users> users = this.userRepo.findAll();
+        for(Users user : users) {
+            if (user.getuName().equals(uname)){
+                return user.getCurrentUserType();
+            }
+        }
+
+        throw new UsernameNotFoundException("Could not find username: "+ uname);
     }
 
 }

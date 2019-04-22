@@ -1,36 +1,45 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Add Driver</title>
+    <title>Sign Up</title>
 </head>
 <body>
-<h1> Add new Driver</h1>
+<h1>Add new Route</h1>
 <h5>
     Back to main page
-    <a href="/">Login</a>
+    <a href = "/">Login</a>
 </h5>
-
 <br>
 
-<table class = "table table-striped">
+<h3>Pending Requests</h3>
+
+<table class="table table-striped">
+
     <tr>
-        <th>Driver Name</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Route</th>
         <th>Username</th>
-        <th>Authorize this Driver</th>
+
     </tr>
 
-
-    <br>
-
-        <tr th:each="driver : ${drivers}">
-            <td th:text="${driver.dName}"></td>
-            <td th:text="${driver.username}" name="dUser"></td>
-        </tr>
-
-
+    <tr th:each="driver : ${drivers}">
+        <td th:text="${driver.id}"></td>
+        <td th:text="${driver.dName}"></td>
+        <td th:text="${driver.route}"></td>
+        <td th:text="${driver.username}"></td>
+    </tr>
 </table>
 
+<h2>Enter ID of a Driver to validate</h2>
+<form th:action="@{/addDriver}" method="post">
+    <div><label> ID <input type="text" name="id"/> </label></div>
+
+    <div><input type="submit" value="Validate rider"></div>
 </form>
+
+
+
 </body>
 </html>

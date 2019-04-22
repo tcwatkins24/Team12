@@ -56,13 +56,17 @@ public class signUpController {
             newUser.setuName(userDto.getUsername());
             newUser.setPassword(userDto.getPassword());
             newUser.setRemainingSignInAttempts(3);
-            userRepository.save(newUser);
+
             if (isDriver.equals("yes")) {
+                newUser.setCurrentUserType(1);
+
                 Driver newDriver = new Driver();
                 newDriver.setdName(userDto.getFirstName() + " " + userDto.getLastName());
                 newDriver.setUsername(userDto.getUsername());
                 driverRepository.save(newDriver);
             }
+            userRepository.save(newUser);
+
             modelAndView.setViewName("/completeSignUp");
         }
         return modelAndView;
