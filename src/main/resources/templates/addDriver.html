@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+</head>
+<body>
+<h1>Add new Route</h1>
+<h5>
+    Back to main page
+    <a href = "/">Login</a>
+</h5>
+<br>
+
+<h3>Pending Requests</h3>
+
+<table class="table table-striped">
+
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Route</th>
+        <th>Username</th>
+
+    </tr>
+
+    <tr th:each="driver : ${drivers}">
+        <td th:text="${driver.id}"></td>
+        <td th:text="${driver.dName}"></td>
+        <td th:text="${driver.route}"></td>
+        <td th:text="${driver.username}"></td>
+    </tr>
+</table>
+
+<h2>Enter ID of a Driver to validate</h2>
+<form th:action="@{/addDriver}" method="post">
+    <div><label> ID <input type="text" name="id"/> </label></div>
+
+    <div><input type="submit" value="Validate rider"></div>
+</form>
+
+
+
+</body>
+</html>

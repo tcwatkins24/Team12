@@ -10,5 +10,36 @@
     <input type="submit" value="Sign Out"/>
 </form>
 
+<div th:if = "${validated == true}">
+    <h2>Current Routes</h2>
+
+    <h2>Pick Up Routes</h2>
+    <table class="table table-striped">
+        <tr>
+            <th>Id</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Start Pickup</th>
+            <th>End Pickup</th>
+            <th>Remaining Seats</th>
+
+        </tr>
+
+        <tr th:each="route : ${routes}">
+            <td th:text="${route.id}"></td>
+            <td th:text="${route.startLoc}"></td>
+            <td th:text="${route.endLoc}"></td>
+            <td th:text="${route.startPickUpTime}"></td>
+            <td th:text="${route.endPickUpTime}"></td>
+            <td th:text="${route.capacity}"></td>
+
+            <td><button type = "submit" th:id = "${route.id}">Drive Route</button></td>
+
+        </tr>
+    </table>
+
+</div>
+<div th:if= "${validated == false}"> Admin has not approved Driving Ability yet</div>
+
 </body>
 </html>

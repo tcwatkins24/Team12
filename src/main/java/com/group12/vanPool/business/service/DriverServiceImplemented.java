@@ -27,4 +27,16 @@ public class DriverServiceImplemented implements DriverService{
         }
         return list;
     }
+
+    @Override
+    public List<Driver> getUnvalidatedDrivers() {
+        Iterable<Driver> drivers = this.driverRepository.findAll();
+        List<Driver> list = new ArrayList<>();
+        for (Driver d : drivers) {
+            if(d.getAuth() == false){
+                list.add(d);
+            }
+        }
+        return list;
+    }
 }

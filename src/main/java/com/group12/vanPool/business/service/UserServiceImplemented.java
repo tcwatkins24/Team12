@@ -52,4 +52,5 @@ public class UserServiceImplemented implements UserService{
 
         throw new UsernameNotFoundException("Could not find username: "+ uname);
     }
+
 }

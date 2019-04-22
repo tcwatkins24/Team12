@@ -17,8 +17,8 @@ import java.util.List;
 @RequestMapping("/riderHomePage")
 public class riderHomePageController {
 
-    @Autowired
-    private RouteServiceImplemented routeServiceImplemented;
+    @Autowired    private RouteServiceImplemented routeServiceImplemented;
+
 
 
     @RequestMapping(method = RequestMethod.GET)

@@ -25,13 +25,12 @@ create table Passenger (
 );
 
 create table ROUTE(
-    ID integer primary key AUTO_INCREMENT,
-    STARTLOCATION varchar(25),
-    ENDLOCATION varchar(25),
-    STARTPICKUPTIME varchar(25),
-    ENDPICKUPTIME varchar(25),
-    CAPACITY integer
-
+    id integer primary key AUTO_INCREMENT,
+    startLoc varchar(25),
+    endLoc varchar(25),
+    startPickUpTime varchar(25),
+    endPickUpTime varchar(25),
+    capacity integer
 );
 
 
