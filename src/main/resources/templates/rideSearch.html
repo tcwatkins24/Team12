@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>RideSearch</title>
+</head>
+
+<body>
+<h1 Here are the matched routes></h1>
+<br>
+
+<tr th:each="route : ${matchedRoutes}">
+    <td th:text="${route.id}"></td>
+    <td th:text="${route.startLoc}"></td>
+    <td th:text="${route.endLoc}"></td>
+    <td th:text="${route.startPickUpTime}"></td>
+    <td th:text="${route.endPickUpTime}"></td>
+    <td th:text="${route.capacity}"></td>
+
+    <td><button type = "submit" th:id = "${route.id}">Join</button></td>
+
+</tr>
+
+</body>
+</html>

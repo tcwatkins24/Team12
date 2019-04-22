@@ -8,8 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -29,6 +31,21 @@ public class riderHomePageController {
         List<Route> routesList = routeServiceImplemented.getRides();
         model1.addObject("routes", routesList);
         return model1;
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    public ModelAndView searchRide(@RequestParam(name = "startL") String start, @RequestParam(name = "endL") String end) {
+        ModelAndView model = new ModelAndView("rideSearch");
+        List<Route> matchedRoutes = new ArrayList<>();
+        List<Route> allRoutes = routeServiceImplemented.getRides();
+        for (Route r : allRoutes) {
+            if (r.getStartLoc().equals(start) && r.getEndLoc().equals(end)) {
+                matchedRoutes.add(r);
+            }
+        }
+
+        model.addObject("matchedRoutes", matchedRoutes);
+        return model;
     }
 }
 

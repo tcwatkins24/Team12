@@ -34,6 +34,13 @@
 
     </tr>
 </table>
+<br>
+<h2> Search for a ride </h2>
+<form th:action="@{/riderHomePage}" method="post">
+    Start Location: <input type="text" name="startL"><br>
+    End Location: <input type="text" name="endL"><br>
+    <input type="submit" value="Submit">
+</form>
 
 </body>
 </html>
