@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="/css/login.css"/>
+
 </head>
 <body>
-<h1>Sign Up for VanPool.</h1>
-<h5>
-    Have a account.
-    <a href = "/login">Login</a>
-</h5>
+<div id = "center-box">
+
+<h1>Register for VanPool</h1>
+
 <br>
 
 <form th:action="@{/submit-signUp}" th:object="${userDto}"  th:method="post" method="post" action="signUp">
@@ -49,16 +50,22 @@
 
     <div id="wrapper">
         <label th:for="isDriver">Are you signing up as a Driver?</label>
-        <p>
+        <p class = "p-inline">
             <input type="radio" name="yes_no" value ="yes" checked>Yes</input>
         </p>
-        <p>
+        <p class = "p-inline">
             <input type="radio" name="yes_no" value ="no">No</input>
         </p>
     </div>
     <br>
-    <button type="submit">Submit</button>
+    <button id = "signUp" type="submit">Submit</button>
 </form>
 
+<span></span>
+<h5>
+    Have a account?
+    <a href = "/login">Login</a>
+</h5>
+</div>
 </body>
 </html>

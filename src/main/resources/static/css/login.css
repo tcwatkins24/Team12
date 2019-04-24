@@ -1,0 +1,158 @@
+
+
+body{
+      background-color: #41AFA8;
+}
+
+#center-box{
+   text-align: center;
+       border-radius: 4px;
+       margin: auto;
+       width: 50%;
+       background-color: #DFF2F1;
+       height: 50%;
+       margin-top: 8%;
+       padding-top: 10px;
+       padding-bottom: 30px;
+
+}
+
+#signUp{
+  font-size: 16px;
+
+    width: 250px;
+    height: 30px;
+    border-radius: 4px;
+     background-color: #DFF2F1;
+      border: 1px solid #41AFA8;
+            color: #41AFA8;
+
+}
+
+form div{
+   font-size: 16px;
+
+    margin-bottom:10px;
+}
+
+#invalid{
+   margin-bottom:10px;
+   font-size: 16px;
+}
+
+a{
+    text-decoration: none;
+
+}
+
+form div label{
+        margin: auto;
+}
+
+form div label input{
+        width: 250px;
+        height: 20px
+
+}
+
+.text{
+    padding: 0px;
+    margin: 0px;
+      font-weight: normal;
+      display:block;
+
+}
+
+.align-left{
+    text-align:left;
+}
+
+form{
+margin: auto;
+    width: 250px;
+}
+
+span {
+    display: block;
+    margin: 15px auto;
+    margin-left: 30px;
+    margin-right: 30px;
+    border-top: 1px solid black;
+}
+
+#forgot{
+    margin-top: 30px;
+}
+
+#sign-margin{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#stack button{
+        display: block;
+        margin: auto;
+               font-size: 16px;
+               width: 250px;
+               height: 30px;
+               border-radius: 4px;
+               background-color: #DFF2F1;
+               border: 1px solid #41AFA8;
+               margin-bottom:10px;
+}
+
+#stack a{
+color: #41AFA8;
+
+    text-decoration:none;
+}
+
+#signOut{
+    font-size: 16px;
+    width: 250px;
+    border-radius: 4px;
+    background-color: #41AFA8;
+    border: 2px solid #41AFA8;
+
+
+
+    height: 30px;
+            color: #DFF2F1;
+
+}
+
+#footer #left-f{
+    margin-right: 40px;
+}
+
+#footer h5{
+    display:inline;
+}
+
+.inline{
+    display:inline-block;
+}
+
+table{
+width:80%;
+    margin: auto;
+border: 1px solid black;
+
+
+}
+
+table .text{
+    display:inline;
+}
+
+table tr{
+    text-align:left;
+}
+
+.padding{
+    padding: 8%;
+}
+
+.p-inline{
+    display:inline-block;
+}

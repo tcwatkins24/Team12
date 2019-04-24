@@ -5,6 +5,17 @@ import javax.persistence.*;
 @Entity
 @Table(name="Driver")
 public class Driver {
+
+    public Driver() {
+    }
+
+    public Driver(String dName, int route, String username, boolean isAuth) {
+        this.dName = dName;
+        this.route = route;
+        this.username = username;
+        this.isAuth = isAuth;
+    }
+
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)

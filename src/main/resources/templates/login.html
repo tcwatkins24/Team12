@@ -1,23 +1,55 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/login.css"/>
+
     <title>Login Page</title>
+
 </head>
 <body>
+<div id = "center-box">
 
 <h1>Login to VanPool</h1>
-<div th:if="${param.error}">
-
-    Invalid username and password.
+<div id = "invalid" th:if="${param.error}">
+    <h3 class = "text">Invalid username or password.</h3>
 </div>
 <div th:if="${param.logout}">
     You have been logged out.
 </div>
 <form th:action="@{/login}" method="post">
-    <div><label> User Name : <input type="text" name="username"/> </label></div>
-    <div><label> Password: <input type="password" name="password"/> </label></div>
-    <div><input type="submit" value="Sign In"></div>
+    <div class = "align-left">
+        <h3 class = "text">Username</h3>
+        <label>
+            <input type="text" name="username"/>
+        </label>
+    </div>
+    <div class = "align-left">
+            <h3 class = "text">Password</h3>
+        <label>
+            <input type="password" name="password"/>
+        </label>
+    </div>
+    <div id = "sign-margin">
+        <input id = "signUp" type="submit" value="Sign In">
+    </div>
 </form>
+
+<span></span>
+    <div id ="footer">
+
+    <h5 id = "left-f">
+        New to Vanpool?
+        <a href = "/signUp">Sign up now »</a>
+    </h5>
+    <h5 id = "forgot right-f" class = "text">
+        <a href="/forgotPassword?">Forgot Password?</a>
+    </h5>
+    </div>
+
+</div>
+
 </body>
 </html>
 

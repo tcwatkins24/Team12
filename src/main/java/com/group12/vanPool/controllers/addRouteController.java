@@ -33,7 +33,7 @@ public class addRouteController {
 
         routeRepository.save(route);
 
-        ModelAndView model1 = new ModelAndView("home");
+        ModelAndView model1 = new ModelAndView("admin");
         return model1;
     }
 }

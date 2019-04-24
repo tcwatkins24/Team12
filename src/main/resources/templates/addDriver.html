@@ -3,43 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="/css/login.css"/>
 </head>
 <body>
-<h1>Validate Driver</h1>
-<h5>
-    Back to main page
-    <a href = "/">Login</a>
-</h5>
+<div id = "center-box">
+
+<h1>Validate New Driver</h1>
+
 <br>
 
-<h3>Pending Requests</h3>
+<h3 class ="text">Pending Requests</h3>
 
 <table class="table table-striped">
 
     <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Route</th>
-        <th>Username</th>
+        <th class ="text padding">Id</th>
+        <th class ="text padding">Name</th>
+        <th class ="text padding">Route</th>
+        <th class ="text padding">Username</th>
 
     </tr>
 
     <tr th:each="driver : ${drivers}">
-        <td th:text="${driver.id}"></td>
-        <td th:text="${driver.dName}"></td>
-        <td th:text="${driver.route}"></td>
-        <td th:text="${driver.username}"></td>
+        <td class ="text padding" th:text="${driver.id}"></td>
+        <td class ="text padding" th:text="${driver.dName}"></td>
+        <td class ="text padding" th:text="${driver.route}"></td>
+        <td class ="text padding" th:text="${driver.username}"></td>
     </tr>
 </table>
 
-<h2>Enter ID of a Driver to validate</h2>
-<form th:action="@{/addDriver}" method="post">
-    <div><label> ID <input type="text" name="id"/> </label></div>
 
-    <div><input type="submit" value="Validate rider"></div>
+    <span></span>
+<h3 class ="text">Enter Driver ID:</h3>
+<form th:action="@{/addDriver}" method="post">
+    <div><label><input type="text" name="id"/> </label></div>
+
+    <div><input id ="signUp" type="submit" value="Validate Driver"></div>
 </form>
 
-
-
+<span></span>
+<h5>
+    Back to
+    <a href = "/admin">Admin Home</a>
+</h5>
+</div>
 </body>
 </html>

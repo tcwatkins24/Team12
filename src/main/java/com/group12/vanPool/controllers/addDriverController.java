@@ -47,7 +47,7 @@ public class addDriverController {
 
     @RequestMapping(method = RequestMethod.POST)
     public ModelAndView formSubmit(@RequestParam Map<String,String> reqPar){
-        ModelAndView model1 = new ModelAndView("home");
+        ModelAndView model1 = new ModelAndView("admin");
 
         Integer id =  Integer.parseInt(reqPar.get("id"));
         String username = null;

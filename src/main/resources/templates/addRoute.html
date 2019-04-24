@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="/css/login.css"/>
+
 </head>
 <body>
-<h1>Add new Route</h1>
-<h5>
-    Back to main page
-    <a href = "/">Login</a>
-</h5>
+<div id = "center-box">
+
+<h1>Add New Route</h1>
+
 <br>
 
 <form th:action="@{/addRoute}" method="post">
@@ -18,8 +19,15 @@
     <div><label> Start Pickup Time:<input type="text" name="startPickUpTime"/> </label></div>
     <div><label> End Pickup Time:<input type="text" name="endPickUpTime"/> </label></div>
 
-    <div><input type="submit" value="Create new ride"></div>
+    <div><input id = "signUp" type="submit" value="Create new ride"></div>
 </form>
 
+
+    <span></span>
+    <h5>
+        Back to
+        <a href = "/admin">Admin Home</a>
+    </h5>
+</div>
 </body>
 </html>

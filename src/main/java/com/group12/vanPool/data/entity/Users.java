@@ -6,6 +6,18 @@ import javax.persistence.*;
 @Entity
 @Table(name = "USERS")
 public class Users {
+
+
+    public Users() {
+    }
+
+    public Users(String uName, String password, int currentUserType, int remainingSignInAttempts) {
+        this.uName = uName;
+        this.password = password;
+        this.currentUserType = currentUserType;
+        this.remainingSignInAttempts = remainingSignInAttempts;
+    }
+
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -3,16 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="/css/login.css"/>
 </head>
 <body>
-<h1>Admin</h1>
-<h5>
-    Back to main page
-    <a href = "/">Login</a>
-</h5>
-<br>
+<div id = "center-box">
+<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
 
-<button><a href="/addRoute">addRoute</a></button>
-<button><a href="/addDriver">addDriver</a> </button>
+<div id ="stack">
+    <button><a href="/addRoute">Add Route</a></button>
+    <button><a href="/addDriver">Validate Driver</a> </button>
+</div>
+
+<span></span>
+    <h5>
+        Back to
+        <a href = "/login">Login</a>
+    </h5>
+    <form th:action="@{/logout}" method="post">
+        <input id = "signOut" type="submit" value="Sign Out"/>
+    </form>
+</div>
+
 </body>
 </html>
