@@ -5,6 +5,18 @@ import javax.persistence.*;
 @Entity
 @Table(name = "ROUTE")
 public class Route {
+
+    public Route() {
+    }
+
+    public Route(String startLoc, String endLoc, String startPickUpTime, String endPickUpTime, int capacity) {
+        this.startLoc = startLoc;
+        this.endLoc = endLoc;
+        this.startPickUpTime = startPickUpTime;
+        this.endPickUpTime = endPickUpTime;
+        this.capacity = capacity;
+    }
+
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;

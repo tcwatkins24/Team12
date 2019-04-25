@@ -146,8 +146,12 @@ table .text{
 }
 
 table tr{
-    text-align:left;
-}
+     text-align:left;
+ }
+
+ table .rider-align{
+      text-align:center;
+  }
 
 .padding{
     padding: 8%;
@@ -155,4 +159,21 @@ table tr{
 
 .p-inline{
     display:inline-block;
+}
+
+#search-submit{
+ margin-top:10px;
+font-size: 16px;
+
+    width: 250px;
+    height: 30px;
+    border-radius: 4px;
+     background-color: #DFF2F1;
+      border: 1px solid #41AFA8;
+            color: #41AFA8;
+
+}
+
+#line1{
+    margin-bottom: 5px;
 }
