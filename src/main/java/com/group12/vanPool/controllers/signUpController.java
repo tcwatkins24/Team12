@@ -56,6 +56,8 @@ public class signUpController {
             newUser.setuName(userDto.getUsername());
             newUser.setPassword(userDto.getPassword());
             newUser.setRemainingSignInAttempts(3);
+            newUser.setSecurityQuestion(userDto.getSecurityQuestion());
+            newUser.setSecurityAnswer(userDto.getSecurityAnswer());
 
             if (isDriver.equals("yes")) {
                 newUser.setCurrentUserType(1);

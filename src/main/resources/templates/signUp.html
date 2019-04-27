@@ -48,6 +48,20 @@
         <p class="text-danger" th:if="${#fields.hasErrors('matchingPassword')}" th:errors="*{matchingPassword}"></p>
     </div>
 
+
+    <div class="form-group">
+        <label for="securityQuestion">Security Question:</label><br>
+        <input type="text" class="form-control" th:field="*{securityQuestion}" id="securityQuestion">
+        <p class="text-danger" th:if="${#fields.hasErrors('securityQuestion')}" th:errors="*{securityQuestion}"></p>
+    </div>
+    <div class="form-group">
+        <label for="securityAnswer">Security Answer:</label><br>
+        <input type="text" class="form-control" th:field="*{securityAnswer}" id="securityAnswer">
+        <p class="text-danger" th:if="${#fields.hasErrors('securityAnswer')}" th:errors="*{securityAnswer}"></p>
+    </div>
+
+
+
     <div id="wrapper">
         <label th:for="isDriver">Are you signing up as a Driver?</label>
         <p class = "p-inline">

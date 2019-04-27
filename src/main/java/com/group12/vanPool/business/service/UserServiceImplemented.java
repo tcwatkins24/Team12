@@ -53,4 +53,15 @@ public class UserServiceImplemented implements UserService{
         throw new UsernameNotFoundException("Could not find username: "+ uname);
     }
 
+    @Override
+    public Boolean checkIfUserExists(String uname) {
+
+        Iterable<Users> users = this.userRepo.findAll();
+        for (Users user : users) {
+            if (user.getuName().equals(uname)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

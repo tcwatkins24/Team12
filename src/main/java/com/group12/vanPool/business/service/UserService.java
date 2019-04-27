@@ -6,6 +6,11 @@ import java.util.List;
 
 public interface UserService {
     List<Users> getUsers();
+
     Users getByUsername(String uname);
-     int getUserType(String uname);
+
+    int getUserType(String uname);
+
+    Boolean checkIfUserExists(String uname);
+
 }

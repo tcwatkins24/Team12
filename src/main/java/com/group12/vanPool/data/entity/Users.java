@@ -16,6 +16,8 @@ public class Users {
         this.password = password;
         this.currentUserType = currentUserType;
         this.remainingSignInAttempts = remainingSignInAttempts;
+        this.securityQuestion = "Childhood Dog";
+        this.securityAnswer =  "Katie";
     }
 
     @Id
@@ -34,6 +36,12 @@ public class Users {
 
     @Column(name = "remainingSignInAttempts")
     private int remainingSignInAttempts;
+
+    @Column(name = "securityQuestion")
+    private String securityQuestion;
+
+    @Column(name = "securityAnswer")
+    private String securityAnswer;
 
     public int getId() {
         return id;
@@ -73,5 +81,21 @@ public class Users {
 
     public void setRemainingSignInAttempts(int remainingSignInAttempts) {
         this.remainingSignInAttempts = remainingSignInAttempts;
+    }
+
+    public String getSecurityQuestion() {
+        return securityQuestion;
+    }
+
+    public void setSecurityQuestion(String securityQuestion) {
+        this.securityQuestion = securityQuestion;
+    }
+
+    public String getSecurityAnswer() {
+        return securityAnswer;
+    }
+
+    public void setSecurityAnswer(String securityAnswer) {
+        this.securityAnswer = securityAnswer;
     }
 }

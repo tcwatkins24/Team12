@@ -22,10 +22,15 @@ public class UserDto {
     private String password;
     @NotBlank (message = "Matching password is required")
     private String matchingPassword;
+    @NotBlank (message = "Security question is required")
+    private String securityQuestion;
+    @NotBlank (message = "Security answer is required")
+    private String securityAnswer;
+
     private boolean isDriver;
 
 
-    public UserDto(Long id, String username, String firstName, String lastName, String email, String password, String matchingPassword, boolean isDriver) {
+    public UserDto(Long id, String username, String firstName, String lastName, String email, String password, String matchingPassword,String securityQuestion,String securityAnswer, boolean isDriver) {
         this.id = id;
         this.username = username;
         this.lastName = lastName;
@@ -34,6 +39,8 @@ public class UserDto {
         this.password = password;
         this.matchingPassword = matchingPassword;
         this.isDriver = isDriver;
+        this.securityQuestion = securityQuestion;
+        this.securityAnswer = securityAnswer;
 
     }
 
@@ -93,6 +100,22 @@ public class UserDto {
 
     public void setMatchingPassword(String matchingPassword) {
         this.matchingPassword = matchingPassword;
+    }
+
+    public String getSecurityQuestion() {
+        return securityQuestion;
+    }
+
+    public void setSecurityQuestion(String securityQuestion) {
+        this.securityQuestion = securityQuestion;
+    }
+
+    public String getSecurityAnswer() {
+        return securityAnswer;
+    }
+
+    public void setSecurityAnswer(String securityAnswer) {
+        this.securityAnswer = securityAnswer;
     }
 
     public boolean isDriver() {return this.isDriver;}
