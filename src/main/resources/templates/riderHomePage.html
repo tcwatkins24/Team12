@@ -12,6 +12,8 @@
 <span></span>
     <h2> Rides Joined</h2>
 
+    <div th:if="${not #lists.isEmpty(joinedRoutes)}">
+
     <table class="table table-striped">
         <tr class = "rider">
             <th>Id</th>
@@ -34,10 +36,16 @@
 
 
     </table>
-    <br>
-    <form th:action="@{/balance}" method="get">
-        <input id = "balance" type="submit" value="Check Current Balance"/>
-    </form>
+        <br>
+
+        <form th:action="@{/balance}" method="get">
+            <input id = "balance" type="submit" value="Check Current Balance"/>
+        </form>
+
+    </div>
+    <div th:if="${#lists.isEmpty(joinedRoutes)}">
+        <h5>You haven't joined any rides yet</h5>
+    </div>
     <span></span>
     <h2> Search for Upcoming Rides </h2>
     <form th:action="@{/riderHomePage}" method="post">
