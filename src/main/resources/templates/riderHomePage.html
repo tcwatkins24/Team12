@@ -12,6 +12,29 @@
 <span></span>
     <h2> Rides Joined</h2>
 
+    <table class="table table-striped">
+        <tr class = "rider">
+            <th>Id</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Start Pickup</th>
+            <th>End Pickup</th>
+            <th>Remaining Seats</th>
+        </tr >
+
+
+        <tr class="rider" th:each="jr : ${joinedRoutes}">
+            <td th:text="${jr.id}"></td>
+            <td th:text="${jr.startLoc}"></td>
+            <td th:text="${jr.endLoc}"></td>
+            <td th:text="${jr.startPickUpTime}"></td>
+            <td th:text="${jr.endPickUpTime}"></td>
+            <td th:text="${jr.capacity}"></td>
+        </tr>
+
+
+    </table>
+
     <h5>No rides joined yet</h5>
     <span></span>
     <h2> Search for Upcoming Rides </h2>

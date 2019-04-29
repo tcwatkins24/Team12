@@ -1,8 +1,11 @@
 package com.group12.vanPool.controllers;
 
+import com.group12.vanPool.business.service.JoinedRoutesImplemented;
 import com.group12.vanPool.business.service.RouteService;
 import com.group12.vanPool.business.service.RouteServiceImplemented;
+import com.group12.vanPool.data.entity.JoinedRoute;
 import com.group12.vanPool.data.entity.Route;
+import com.group12.vanPool.data.repository.JoinedRoutes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,9 +22,10 @@ import java.util.List;
 @RequestMapping("/riderHomePage")
 public class riderHomePageController {
 
-    @Autowired    private RouteServiceImplemented routeServiceImplemented;
-
-
+    @Autowired
+    private RouteServiceImplemented routeServiceImplemented;
+    @Autowired
+    private JoinedRoutesImplemented JRI;
 
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView displayRiderHome(){
@@ -30,6 +34,13 @@ public class riderHomePageController {
 
         List<Route> routesList = routeServiceImplemented.getRides();
         model1.addObject("routes", routesList);
+        List<JoinedRoute> jroutes = JRI.getJoinedRoutes();
+        List<Route> userJoinedRoutes = new ArrayList<>();
+        for (JoinedRoute jr : jroutes) {
+            Route r = routeServiceImplemented.getById(jr.getId());
+            userJoinedRoutes.add(r);
+        }
+        model1.addObject("joinedRoutes", userJoinedRoutes);
         return model1;
     }
 

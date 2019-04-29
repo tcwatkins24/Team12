@@ -8,7 +8,7 @@
 <body>
 <h1 Here are the matched routes></h1>
 <br>
-<form th:action="@{/rideSearch}" method="post">
+<form th:action="@{/joinSuccess}" method="post">
 <tr th:each="route : ${matchedRoutes}">
         <td th:text="${route.id}"></td>
         <td th:text="${route.startLoc}"></td>
@@ -17,7 +17,7 @@
         <td th:text="${route.endPickUpTime}"></td>
         <td th:text="${route.capacity}"></td>
 
-        <td><button type = "submit" th:id = "${route.id}">Join</button></td>
+        <td><button type = "submit" th:value = "${route.id}" name="routeID">Join</button></td>
 
     </tr>
 </form>

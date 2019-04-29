@@ -6,5 +6,7 @@ import java.util.List;
 public interface RouteService {
 
     List<Route> getRides();
+
+    Route getById(int id);
 }
 

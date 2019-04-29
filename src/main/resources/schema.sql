@@ -7,6 +7,9 @@ CREATE TABLE Driver (
      password varchar(25),
      isAuth bit
 );
+create table JoinedRoute (
+    routeID integer
+);
 
 create table Users(
     id integer primary key AUTO_INCREMENT,
