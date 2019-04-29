@@ -14,6 +14,36 @@
 
     <div th:if = "${validated == true}">
         <h2>Rides Joined</h2>
+        <table class="table table-striped">
+            <tr class = "rider">
+                <th>Id</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Start Pickup</th>
+                <th>End Pickup</th>
+                <th>Remaining Seats</th>
+            </tr >
+
+
+            <tr class="rider" th:each="jr : ${joinedRoutes}">
+                <td th:text="${jr.id}"></td>
+                <td th:text="${jr.startLoc}"></td>
+                <td th:text="${jr.endLoc}"></td>
+                <td th:text="${jr.startPickUpTime}"></td>
+                <td th:text="${jr.endPickUpTime}"></td>
+                <td th:text="${jr.capacity}"></td>
+            </tr>
+
+
+        </table>
+        <span></span>
+        <h2> Search for Upcoming Rides </h2>
+        <form th:action="@{/driverHomePage}" method="post">
+            <div id ="line1">        Start Location: <input type="text" name="startL"><br>
+            </div>
+            End Location:   <input type="text" name="endL"><br>
+            <input id = "search-submit"type="submit" value="Submit">
+        </form>
         <span></span>
         <h2>List of Upcoming Rides</h2>
         <table class="table table-striped">
@@ -26,7 +56,7 @@
                 <th>Remaining Seats</th>
 
             </tr>
-
+            <form th:action="@{/joinDriveSuccess}" method="post">
             <tr th:each="route : ${routes}">
                 <td th:text="${route.id}"></td>
                 <td th:text="${route.startLoc}"></td>
@@ -35,9 +65,11 @@
                 <td th:text="${route.endPickUpTime}"></td>
                 <td th:text="${route.capacity}"></td>
 
-                <td><button type = "submit" th:id = "${route.id}">Drive Route</button></td>
+                <td><button type = "submit" th:value = "${route.id}" name="routeID">Drive Route</button></td>
 
             </tr>
+            </form>
+
         </table>
         <span></span>
         <h2> Previous Rides </h2>

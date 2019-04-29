@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>RideSearch</title>
+    <title>DriverSearch</title>
     <link rel="stylesheet" type="text/css" href="/css/login.css"/>
 
 </head>
@@ -26,7 +26,7 @@
 
         </tr >
 
-        <form th:action="@{/joinSuccess}" method="post">
+        <form th:action="@{/joinDriveSuccess}" method="post">
             <tr class="rider-align" th:each="route : ${matchedRoutes}">
                 <td th:text="${route.id}"></td>
                 <td th:text="${route.startLoc}"></td>
@@ -35,14 +35,14 @@
                 <td th:text="${route.endPickUpTime}"></td>
                 <td th:text="${route.capacity}"></td>
 
-                <td><button type = "submit" th:value = "${route.id}" name="routeID">Join</button></td>
+                <td><button type = "submit" th:value = "${route.id}" name="routeID">Drive Route</button></td>
             </tr>
         </form>
 
     </table>
 
     <span></span>
-    <a href="/riderHomePage">Back to Homepage»</a>
+    <a href="/driverHomePage">Back to Homepage»</a>
 </div>
 </body>
 </html>
