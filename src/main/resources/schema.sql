@@ -33,7 +33,8 @@ create table ROUTE(
     endLoc varchar(25),
     startPickUpTime varchar(25),
     endPickUpTime varchar(25),
-    capacity integer
+    capacity integer,
+    cost double
 );
 
 

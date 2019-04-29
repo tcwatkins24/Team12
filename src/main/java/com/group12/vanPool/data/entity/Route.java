@@ -15,6 +15,7 @@ public class Route {
         this.startPickUpTime = startPickUpTime;
         this.endPickUpTime = endPickUpTime;
         this.capacity = capacity;
+        this.cost = 12.50;
     }
 
     @Id
@@ -25,6 +26,9 @@ public class Route {
     private String startPickUpTime;
     private String endPickUpTime;
     private int capacity;
+    private double cost;
+
+    public double getCost() {return this.cost;}
 
     public int getCapacity() {
         return capacity;

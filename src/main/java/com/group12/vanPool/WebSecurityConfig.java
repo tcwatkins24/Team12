@@ -31,7 +31,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/", "/home","/signUp","/h2-console/**", "/submit-signUp","/addRoute","/addDriver","/joinSuccess","/rideSearch","/css/**","/img/**","/js/**","/passwordReset","/changePassword","/securityQuestion").permitAll()
+                .antMatchers("/", "/home","/signUp","/h2-console/**", "/submit-signUp","/addRoute","/addDriver","/joinSuccess","/rideSearch","/css/**","/img/**","/js/**","/passwordReset","/changePassword","/securityQuestion","/balance").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
