@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Balance</title>
+    <link rel="stylesheet" type="text/css" href="/css/login.css"/>
+
 </head>
 <body>
-<h5>Here is your current balance: </h5>
-<td th:text="${balance}"/>
-
-<button class="button" id="Return to Homepage"><a href="/riderHomePage">Return</a> </button>
+<div id = "center-box">
+    <h2>Current Balance</h2>
+    <h3 th:text="'$'+${balance}"></h3>
+    <span></span>
+    <h3><a href = "/riderHomePage">Back to Homepage</a></h3>
+ </div>
 </body>
 </html>

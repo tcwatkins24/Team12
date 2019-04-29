@@ -34,6 +34,10 @@
 
 
     </table>
+    <br>
+    <form th:action="@{/balance}" method="get">
+        <input id = "balance" type="submit" value="Check Current Balance"/>
+    </form>
     <span></span>
     <h2> Search for Upcoming Rides </h2>
     <form th:action="@{/riderHomePage}" method="post">
@@ -70,17 +74,13 @@
     </form>
 
 </table>
-    <span></span>
-    <h2> Previous Rides </h2>
-    <h5>You haven't taken a  Vanpool yet.</h5>
+
     <span></span>
 
     <form th:action="@{/logout}" method="post">
         <input id = "signUp" type="submit" value="Sign Out"/>
     </form>
-    <form th:action="@{/balance}" method="get">
-        <input id = "balance" type="submit" value="Balance"/>
-    </form>
+
 </div>
 
 </body>

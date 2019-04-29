@@ -177,3 +177,14 @@ font-size: 16px;
 #line1{
     margin-bottom: 5px;
 }
+
+#balance{
+font-size: 16px;
+
+    width: 250px;
+    height: 30px;
+    border-radius: 4px;
+     background-color: #DFF2F1;
+      border: 1px solid #41AFA8;
+            color: #41AFA8;
+}
