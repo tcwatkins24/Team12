@@ -3,23 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>RideSearch</title>
+    <link rel="stylesheet" type="text/css" href="/css/login.css"/>
+
 </head>
 
 <body>
-<h1 Here are the matched routes></h1>
+<div id = "center-box">
+
+<h1>  Matched routes </h1>
+    <span></span>
 <br>
-<form th:action="@{/joinSuccess}" method="post">
-<tr th:each="route : ${matchedRoutes}">
-        <td th:text="${route.id}"></td>
-        <td th:text="${route.startLoc}"></td>
-        <td th:text="${route.endLoc}"></td>
-        <td th:text="${route.startPickUpTime}"></td>
-        <td th:text="${route.endPickUpTime}"></td>
-        <td th:text="${route.capacity}"></td>
+    
+    <table class="table table-striped">
 
-        <td><button type = "submit" th:value = "${route.id}" name="routeID">Join</button></td>
+        <tr class = "rider-align">
+            <th>Id</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Start Pickup</th>
+            <th>End Pickup</th>
+            <th>Remaining Seats</th>
 
-    </tr>
-</form>
+        </tr >
+
+        <form th:action="@{/joinSuccess}" method="post">
+            <tr class="rider-align" th:each="route : ${matchedRoutes}">
+                <td th:text="${route.id}"></td>
+                <td th:text="${route.startLoc}"></td>
+                <td th:text="${route.endLoc}"></td>
+                <td th:text="${route.startPickUpTime}"></td>
+                <td th:text="${route.endPickUpTime}"></td>
+                <td th:text="${route.capacity}"></td>
+
+                <td><button type = "submit" th:value = "${route.id}" name="routeID">Join</button></td>
+            </tr>
+        </form>
+
+    </table>
+
+    <span></span>
+    <a href="/riderHomePage">Back to Homepage»</a>
+</div>
 </body>
 </html>
